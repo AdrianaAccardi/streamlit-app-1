@@ -23,7 +23,7 @@ st.title("Dashboard")
 st.image('hdm-logo.jpg')
 
 # Add header
-st.header("unsere Auswärtung")
+st.header("Unsere Auswertung")
 
 #-------------------#
 # SIDEBAR
@@ -44,16 +44,20 @@ st.write("Schauen wir uns die Daten genauer an")
 # Show static DataFrame
 st.dataframe(df)
 
-st.write("Werfen wir einen Blick auf die chart")
+st.write("Werfen wir einen Blick auf die Pie Chart")
 # Make a chart with altair
+
 c = alt.Chart(df).mark_circle().encode(
      x='life_satisfaction', 
      y='gdp_per_capita', 
      color='country'
      )
 
+
 # Show plot
 st.altair_chart(c, use_container_width=True)
+
+
 
 ###-------------------###
 # END OF APP

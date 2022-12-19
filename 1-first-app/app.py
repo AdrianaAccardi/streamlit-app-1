@@ -7,7 +7,7 @@ import altair as alt
 #-------------------#
 # IMPORT DATA
 
-df = pd.read_csv("https://raw.githubusercontent.com/kirenz/datasets/master/oecd-new.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/eo026/homework-1/main/data/external/data.csv")
 
 
 ###-------------------###

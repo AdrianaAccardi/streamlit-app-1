@@ -1,3 +1,5 @@
+Gruppe E
+
 #-------------------#
 # SETUP
 import streamlit as st

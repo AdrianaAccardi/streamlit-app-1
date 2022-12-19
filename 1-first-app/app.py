@@ -17,13 +17,13 @@ df = pd.read_csv("https://raw.githubusercontent.com/kirenz/datasets/master/oecd-
 # HEADER
 
 # Title of our app
-st.title("Hello World")
+st.title("Dashboard")
 
 # Add image
 st.image('hdm-logo.jpg')
 
 # Add header
-st.header("My Text")
+st.header("unsere Auswärtung")
 
 #-------------------#
 # SIDEBAR
@@ -40,11 +40,11 @@ st.sidebar.write("My life satisfaction is around ", satisfaction, 'points')
 #-------------------#
 # BODY
 
-st.write("Take a look at my data")
+st.write("Schauen wir uns die Daten genauer an")
 # Show static DataFrame
 st.dataframe(df)
 
-st.write("Take a look at my chart")
+st.write("Werfen wir einen Blick auf die chart")
 # Make a chart with altair
 c = alt.Chart(df).mark_circle().encode(
      x='life_satisfaction', 

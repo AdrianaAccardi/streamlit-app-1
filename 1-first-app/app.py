@@ -29,13 +29,13 @@ st.header("Unsere Auswertung")
 # SIDEBAR
 
 # Header
-st.sidebar.header("This is my new sidebar")
+st.sidebar.header("Sidebar")
 
 # Make a slider
-satisfaction = st.sidebar.slider('What is your life satisfaction?', 0, 10, 1)
+satisfaction = st.sidebar.slider('Candidate', 0, 10, 1)
 
 # Show output of slider selection
-st.sidebar.write("My life satisfaction is around ", satisfaction, 'points')
+st.sidebar.write("XXXXX ", satisfaction, 'numbers')
 
 #-------------------#
 # BODY
@@ -44,16 +44,18 @@ st.write("Schauen wir uns die Daten genauer an")
 # Show static DataFrame
 st.dataframe(df)
 
-st.write("Werfen wir einen Blick auf die Pie Chart")
+st.write("Die Auswertung hat ergeben")
 # Make a chart with altair
 
-c = alt.Chart(df).mark_circle().encode(
-     x='life_satisfaction', 
-     y='gdp_per_capita', 
-     color='country'
-     )
+import altair as alt
+from vega_datasets import data
 
+source = data.movies.url
 
+alt.Chart(source).mark_bar().encode(
+    alt.X("IMDB_Rating:Q", bin=True),
+    y='count()',
+)
 # Show plot
 st.altair_chart(c, use_container_width=True)
 
